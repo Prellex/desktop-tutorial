@@ -4,19 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Darknet</title>
+    <style>
+        
+        body{
+            background: var(--primary-color);
+            color: var(--secondary-color);
+        }
+    </style>
+
 
 </head>
 
 <body>
+    
     <h1  id="your-id-name"> HOSTJOIN </h1>
+    <form action="" method="get">
     <label id="your-id-name" for="username">Username:</label>
     <input type="text" id="username"  placeholder="Логин">
+    <form action="" method="get">
+    <input type="reset" value="Очистить" />
+   </form>
 <br><br>
+<form action="" method="get">
 <label>Password:</label>
 <input type="text" id="password"  placeholder="Пароль">
-
+<input type="reset" value="Очистить" />
+</form>
 <br><br>
 <input type="button" value="Join" onclick="login()">
+    
+<br><br>
+<div>
+    <input type="button" onclick="changeTheme('light')" value="Тема 1">
+    <input type="button" onclick="changeTheme('dark')" value="Тема 2">
+</div>
+
 
 </body>
 
@@ -46,7 +68,24 @@
         elem.style.background = 'red';
        }
     }
+   
     
+</script>
+<script>
+    function changeTheme(themeName) {
+        var primaryColor;
+        var secondaryColor;
+        if(themeName == 'light') {
+            primaryColor = "Black";
+            secondaryColor = "White";
+        }
+        else if(themeName == 'dark') {
+            primaryColor = "purple";
+            secondaryColor = "black";
+        }
+        document.documentElement.style.setProperty("--primary-color", primaryColor);
+        document.documentElement.style.setProperty("--secondary-color", secondaryColor);
+    }
 </script>
 
 </html>
